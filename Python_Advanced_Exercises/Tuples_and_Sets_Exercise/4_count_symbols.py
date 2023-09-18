@@ -1,4 +1,4 @@
-text = input()
+text = tuple(input())
 
 text_set = set(text)
 
