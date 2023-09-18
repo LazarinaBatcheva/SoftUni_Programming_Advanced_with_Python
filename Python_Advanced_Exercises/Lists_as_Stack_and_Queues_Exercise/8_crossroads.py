@@ -21,7 +21,7 @@ while command != "END":
                 total_cars += 1
             else:
                 print(f"A crash happened!\n{current_car} was hit at {current_car[time_to_cross]}.")
-                raise SystemExit
+                exit()  # raise SystemExit
     command = input()
 
 print(f"Everyone is safe.\n{total_cars} total cars passed the crossroads.")
