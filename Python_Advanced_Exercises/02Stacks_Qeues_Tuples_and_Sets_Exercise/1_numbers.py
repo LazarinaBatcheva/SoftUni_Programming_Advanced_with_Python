@@ -8,21 +8,18 @@ for _ in range(number_of_lines):
 
     if command == "Add":
         if first_second == "First":
-            for number in numbers:
-                first_sequence.add(number)
+            first_sequence.update(numbers)
+            
         else:
-            for number in numbers:
-                second_sequence.add(number)
+            second_sequence.update(numbers)
 
     elif command == "Remove":
         if first_second == "First":
-            for number in numbers:
-                if number in first_sequence:
-                    first_sequence.remove(number)
+            first_sequence.difference_update(numbers)
+            
         else:
             for number in numbers:
-                if number in second_sequence:
-                    second_sequence.remove(number)
+                second_sequence.difference_update(numbers)
 
     elif command == "Check":
         print(first_sequence.issuperset(second_sequence))
