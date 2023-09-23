@@ -6,7 +6,7 @@ for _ in range(rows):
     matrix.append([int(x) for x in input().split(", ")])
 
 max_sum = float("-inf")
-max_indexes = None
+max_sum_indexes = None
 
 for row_index in range(rows - 1):
     for col_index in range(cols - 1):
@@ -18,8 +18,8 @@ for row_index in range(rows - 1):
 
         if max_sum < current_sum:
             max_sum = current_sum
-            max_indexes = [[first_num, right_num], [down_num, down_right_num]]
+            max_sum_indexes = [[first_num, right_num], [down_num, down_right_num]]
 
-print(*max_indexes[0])
-print(*max_indexes[1])
+print(*max_sum_indexes[0])
+print(*max_sum_indexes[1])
 print(max_sum)
