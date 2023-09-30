@@ -26,8 +26,6 @@ for _ in range(num_of_commands):
 
     current_command = command[0]
     direction = command[1]
-    new_row = player_pos[0] + move_directions[direction][0]
-    new_col = player_pos[1] + move_directions[direction][1]
 
     if current_command == "move":
         new_row = player_pos[0] + move_directions[direction][0] * int(command[2])
@@ -36,6 +34,9 @@ for _ in range(num_of_commands):
             player_pos = [new_row, new_col]
 
     elif current_command == "shoot":
+        new_row = player_pos[0] + move_directions[direction][0]
+        new_col = player_pos[1] + move_directions[direction][1]
+        
         while is_valid_index(new_row, new_col):
             if matrix[new_row][new_col] == "x":
                 matrix[new_row][new_col] = "."
