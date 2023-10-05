@@ -12,6 +12,6 @@ for searched_word in searched_words:
     result = re.findall(pattern, text)
     words[searched_word] = len(result)
 
-with open("result.txt", "w") as file:
+with open("output.txt", "w") as file:
     for word, quantity in sorted(words.items(), key=lambda kvp: -(kvp[1])):
         file.write(f"{word} - {quantity}\n")
