@@ -19,9 +19,7 @@ def print_matrix(matrix):
 
 
 def is_valid_number(selected_column_index):
-    if 0 <= selected_column_index < COLS:
-        return True
-    return False
+    return 0 <= selected_column_index < COLS
 
 
 def pos_player_number(col_index, matrix, player_):
@@ -34,9 +32,7 @@ def pos_player_number(col_index, matrix, player_):
 
 
 def is_valid_place(row_index_to_check, col_index_to_check):
-    if 0 <= row_index_to_check < ROWS and 0 <= col_index_to_check < COLS:
-        return True
-    return False
+    return 0 <= row_index_to_check < ROWS and 0 <= col_index_to_check < COLS
 
 
 def stated_directions_count(row, col, row_movement, col_movement, matrix, player_):
