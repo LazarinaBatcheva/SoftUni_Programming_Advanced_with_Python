@@ -19,7 +19,7 @@ DIRECTIONS_MAPPER = {
 SIZE_FIELD = int(input())
 
 
-# check if desired position in matrix
+# checking if desired position in matrix
 def is_in_area(row, col):
     return 0 <= row < SIZE_FIELD and 0 <= col < SIZE_FIELD
 
@@ -35,7 +35,7 @@ hazelnut_count = 0
 for row_index in range(SIZE_FIELD):
     row_data = list(input())
     matrix.append(row_data)
-    # check for squirrel position
+    # checking for squirrel position
     if SQUIRREL in row_data:
         squirrel_pos = [row_index, row_data.index(SQUIRREL)]
         matrix[row_index][row_data.index(SQUIRREL)] = EMPTY
@@ -47,7 +47,7 @@ while directions:
     desired_row = current_row + row_to_go
     desired_col = current_col + col_to_go
 
-    # check if squirrel goes out of the field
+    # checking if squirrel goes out of the field
     if not is_in_area(desired_row, desired_col):
         print('The squirrel is out of the field.')
         print(f'Hazelnuts collected: {hazelnut_count}')
@@ -59,13 +59,13 @@ while directions:
         print(f'Hazelnuts collected: {hazelnut_count}')
         exit()
 
-    # check if squirrel found hazelnut
+    # checking if squirrel found hazelnut
     elif matrix[desired_row][desired_col] == HAZELNUT:
         hazelnut_count += 1
         matrix[desired_row][desired_col] = EMPTY
         squirrel_pos = [desired_row, desired_col]
 
-        # check if squirrel collect enough hazelnuts
+        # checking if squirrel collected enough hazelnuts
         if hazelnut_count == 3:
             print('Good job! You have collected all hazelnuts!')
             print(f'Hazelnuts collected: {hazelnut_count}')
