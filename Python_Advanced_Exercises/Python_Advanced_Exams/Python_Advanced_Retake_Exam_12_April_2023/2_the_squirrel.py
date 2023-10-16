@@ -17,6 +17,8 @@ DIRECTIONS_MAPPER = {
 # size of square shape matrix
 SIZE_FIELD = int(input())
 
+MAX_HAZELNUT_COUNT = 3
+
 
 def is_in_area(row, col):
     return 0 <= row < SIZE_FIELD and 0 <= col < SIZE_FIELD
@@ -59,7 +61,7 @@ while directions:
         matrix[desired_row][desired_col] = EMPTY
         squirrel_pos = [desired_row, desired_col]
 
-        if hazelnut_count == 3:
+        if hazelnut_count == MAX_HAZELNUT_COUNT:
             print('Good job! You have collected all hazelnuts!')
             print(f'Hazelnuts collected: {hazelnut_count}')
             exit()
