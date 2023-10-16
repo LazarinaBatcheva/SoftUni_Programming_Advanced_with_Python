@@ -20,7 +20,8 @@ def combine_and_create(current_textile, current_medicament):
     if combine_elements > MAX_RESOURCES:
         remaining_resources = combine_elements - MAX_RESOURCES
         created_items['MedKit'] = created_items.get('MedKit', 0) + 1
-        medicaments[-1] += remaining_resources
+        if medicaments:
+            medicaments[-1] += remaining_resources
 
     else:
         medicaments.append(current_medicament + 10)
