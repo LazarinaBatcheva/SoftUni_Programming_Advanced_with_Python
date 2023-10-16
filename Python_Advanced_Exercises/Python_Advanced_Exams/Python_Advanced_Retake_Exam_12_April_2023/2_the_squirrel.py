@@ -7,7 +7,6 @@ EMPTY = '*'
 TRAP = 't'
 
 
-# possible directions
 DIRECTIONS_MAPPER = {
     'left': (0, -1),
     'right': (0, 1),
@@ -19,12 +18,10 @@ DIRECTIONS_MAPPER = {
 SIZE_FIELD = int(input())
 
 
-# checking if desired position in matrix
 def is_in_area(row, col):
     return 0 <= row < SIZE_FIELD and 0 <= col < SIZE_FIELD
 
 
-# given directions
 directions = deque(el for el in input().split(', '))
 
 matrix = []
@@ -35,7 +32,6 @@ hazelnut_count = 0
 for row_index in range(SIZE_FIELD):
     row_data = list(input())
     matrix.append(row_data)
-    # checking for squirrel position
     if SQUIRREL in row_data:
         squirrel_pos = [row_index, row_data.index(SQUIRREL)]
         matrix[row_index][row_data.index(SQUIRREL)] = EMPTY
@@ -53,19 +49,16 @@ while directions:
         print(f'Hazelnuts collected: {hazelnut_count}')
         exit()
 
-    # check is squirrel steps on trap
     elif matrix[desired_row][desired_col] == TRAP:
         print('Unfortunately, the squirrel stepped on a trap...')
         print(f'Hazelnuts collected: {hazelnut_count}')
         exit()
 
-    # checking if squirrel found hazelnut
     elif matrix[desired_row][desired_col] == HAZELNUT:
         hazelnut_count += 1
         matrix[desired_row][desired_col] = EMPTY
         squirrel_pos = [desired_row, desired_col]
 
-        # checking if squirrel collected enough hazelnuts
         if hazelnut_count == 3:
             print('Good job! You have collected all hazelnuts!')
             print(f'Hazelnuts collected: {hazelnut_count}')
