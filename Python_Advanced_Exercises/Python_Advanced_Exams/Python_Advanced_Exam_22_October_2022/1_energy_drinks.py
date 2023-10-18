@@ -17,8 +17,8 @@ while milligrams_of_caffeine and energy_drinks:
         consumed_caffeine += total_caffeine
 
     else:
-        if consumed_caffeine >= CAFFEINE_TO_DECREASE = 30:
-            consumed_caffeine -= CAFFEINE_TO_DECREASE = 30
+        if consumed_caffeine >= CAFFEINE_TO_DECREASE:
+            consumed_caffeine -= CAFFEINE_TO_DECREASE
         energy_drinks.append(current_energy_drink)
 
 if energy_drinks:
