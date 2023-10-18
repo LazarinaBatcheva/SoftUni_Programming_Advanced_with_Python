@@ -48,7 +48,7 @@ while command != 'End':
     if race_field[car_row][car_col] == EMPTY:
         total_km_passed += EMPTY_POS_KM
 
-    if race_field[car_row][car_col] == FINISH:
+    elif race_field[car_row][car_col] == FINISH:
         total_km_passed += EMPTY_POS_KM
         is_finished = True
         break
