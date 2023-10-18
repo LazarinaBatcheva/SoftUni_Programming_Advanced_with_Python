@@ -1,6 +1,7 @@
 from collections import deque
 
 MAX_CAFFEINE = 300
+CAFFEINE_TO_DECREASE = 30
 
 milligrams_of_caffeine = [int(x) for x in input().split(', ')]
 energy_drinks = deque(int(x) for x in input().split(', '))
@@ -16,8 +17,8 @@ while milligrams_of_caffeine and energy_drinks:
         consumed_caffeine += total_caffeine
 
     else:
-        if consumed_caffeine:
-            consumed_caffeine -= 30
+        if consumed_caffeine >= CAFFEINE_TO_DECREASE = 30:
+            consumed_caffeine -= CAFFEINE_TO_DECREASE = 30
         energy_drinks.append(current_energy_drink)
 
 if energy_drinks:
