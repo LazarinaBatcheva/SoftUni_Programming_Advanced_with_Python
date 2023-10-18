@@ -49,7 +49,6 @@ while command != 'End':
         total_km_passed += EMPTY_POS_KM
 
     if race_field[car_row][car_col] == FINISH:
-        race_field[car_row][car_col] = RACE_CAR
         total_km_passed += EMPTY_POS_KM
         is_finished = True
         break
@@ -63,12 +62,12 @@ while command != 'End':
 
     command = input()
 
+race_field[car_row][car_col] = RACE_CAR
+
 if is_finished:
     print(f'Racing car {racing_num} finished the stage!')
 else:
     print(f'Racing car {racing_num} DNF.')
-
-race_field[car_row][car_col] = RACE_CAR
 
 print(f'Distance covered {total_km_passed} km.')
 [print(*row, sep='') for row in race_field]
