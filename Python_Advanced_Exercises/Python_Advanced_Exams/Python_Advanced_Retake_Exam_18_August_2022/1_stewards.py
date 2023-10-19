@@ -26,19 +26,19 @@ while len(seats_matches) < 3 and total_rotations_made < 10:
     if first_possible_seat not in seats and second_possible_seat not in seats:
         first_nums_sequence.rotate(-1)
         second_nums_sequence.rotate(1)
+        total_rotations_made += 1
+        continue
 
     elif first_possible_seat in seats:
         if first_possible_seat not in seats_matches:
             seats_matches.append(first_possible_seat)
-        first_nums_sequence.popleft()
-        second_nums_sequence.pop()
 
     if second_possible_seat in seats:
         if second_possible_seat not in seats_matches:
             seats_matches.append(second_possible_seat)
-        first_nums_sequence.popleft()
-        second_nums_sequence.pop()
-
+            
+    first_nums_sequence.popleft()
+    second_nums_sequence.pop()
     total_rotations_made += 1
 
 print(f'Seat matches: {", ".join(seats_matches)}')
