@@ -29,7 +29,7 @@ while len(seats_matches) < 3 and total_rotations_made < 10:
         total_rotations_made += 1
         continue
 
-    elif first_possible_seat in seats:
+    if first_possible_seat in seats:
         if first_possible_seat not in seats_matches:
             seats_matches.append(first_possible_seat)
 
