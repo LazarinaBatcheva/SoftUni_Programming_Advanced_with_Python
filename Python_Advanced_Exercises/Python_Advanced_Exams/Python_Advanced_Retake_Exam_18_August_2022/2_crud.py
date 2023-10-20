@@ -21,6 +21,7 @@ def filling_matrix(size):
     matrix_ = []
     for row_index in range(size):
         matrix_.append(list(input().split()))
+        
     return matrix_
 
 
