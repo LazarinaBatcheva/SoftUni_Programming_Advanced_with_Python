@@ -5,13 +5,12 @@ def shopping_cart(*products):
         if product == 'Stop':
             break
         meal, product = product
-        if meal in meals.keys():
-            if product not in meals[meal] and len(meals[meal]) != meals_limit[meal]:
-                meals[meal].append(product)
+        if meal in meals.keys() and product not in meals[meal] and len(meals[meal]) != meals_limit[meal]:
+            meals[meal].append(product)
 
     result = ''
 
-    if not meals['Soup'] and not meals['Pizza'] and not meals['Dessert']:
+    if all(not meals[meal] for meal in meals.keys()):
         result += 'No products in the cart!'
     else:
         sorted_meals = sorted(meals.items(), key=lambda kvp: (-len(kvp[1]), kvp[0]))
