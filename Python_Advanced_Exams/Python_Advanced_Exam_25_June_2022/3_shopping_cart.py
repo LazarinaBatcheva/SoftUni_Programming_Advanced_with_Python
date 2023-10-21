@@ -1,10 +1,10 @@
 def shopping_cart(*products):
     meals_limit = {'Soup': 3, 'Pizza': 4, 'Dessert': 2}
     meals = {'Soup': [], 'Pizza': [], 'Dessert': []}
-    for product in products:
-        if product == 'Stop':
+    for element in products:
+        if element == 'Stop':
             break
-        meal, product = product
+        meal, product = element
         if meal in meals.keys() and product not in meals[meal] and len(meals[meal]) != meals_limit[meal]:
             meals[meal].append(product)
 
