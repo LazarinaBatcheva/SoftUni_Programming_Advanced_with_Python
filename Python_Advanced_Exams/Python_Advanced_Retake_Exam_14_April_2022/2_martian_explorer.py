@@ -83,7 +83,7 @@ while directions:
 
     rover_pos = next_row, next_col
 
-if water_deposit_count and metal_deposit_count and concrete_deposit_count:
+if all([water_deposit_count, metal_deposit_count, concrete_deposit_count]):
     print('Area suitable to start the colony.')
 else:
     print('Area not suitable to start the colony.')
