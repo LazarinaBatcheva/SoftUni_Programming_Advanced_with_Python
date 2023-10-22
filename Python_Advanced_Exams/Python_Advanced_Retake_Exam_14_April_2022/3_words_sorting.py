@@ -1,4 +1,4 @@
-def words_sorting(*words: str):
+def words_sorting(*words):
     words_dict = {}
     total_sum = 0
 
