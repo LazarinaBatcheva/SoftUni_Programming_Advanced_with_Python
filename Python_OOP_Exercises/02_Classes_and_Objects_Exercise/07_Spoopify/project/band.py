@@ -1,10 +1,11 @@
+from typing import List
 from project.album import Album
 
 
 class Band:
     def __init__(self, name: str):
         self.name = name
-        self.albums: list[Album] = []
+        self.albums: List[Album] = []
 
     def add_album(self, album: Album) -> str:
         for a in self.albums:
